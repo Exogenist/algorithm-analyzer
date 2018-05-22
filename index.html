@@ -5,14 +5,22 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <title></title>
+    <style>
+        #chart-container {
+            min-width: 320px;
+            max-width: 720px;
+            display: block;
+            margin: auto;
+
+        }
+    </style>
 </head>
 
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-    <div >
-
+    <div id="chart-container" >
+        <canvas id="chart" width="400px" height="300px"></canvas>
     </div>
-    <canvas id="chart" width="400px" height="400px"></canvas>
 
     <script>
         let context = document.getElementById("chart").getContext("2d");
