@@ -18,22 +18,47 @@
 
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-    <div id="chart-container" >
+    <div id="chart-container">
         <canvas id="chart" width="400px" height="300px"></canvas>
     </div>
 
     <script>
         let context = document.getElementById("chart").getContext("2d");
-        let chart = new Chart(context,{
+        let chart = new Chart(context, {
             type: "line",
             data: {
-                labels:["1","2","3"],
-                datasets:[{
+                labels: ["1", "2", "3"],
+                datasets: [{
                     label: "test",
-                    data: [1,2,5]
+                    data: [1, 2, 5]
                 }],
             }
         });
+
+        let iteration = 1000000;
+        let givenArr = [1, 2, 6, 3, 7, 3, 45];
+
+        function recursiveSort(arr) {
+            for (var index = 0; index < arr.length - 1; index++) {
+                if (arr[index] > arr[index + 1]) {
+                    arr.splice(index + 2, 0, arr[index]);
+                    arr.splice(index, 1);
+                    return recursiveSort(arr);
+                }
+            }
+        }
+
+        function analyzer(iter) {
+            let start = Date.now();
+            for (let i = 0; i < iteration; i++) {
+                recursiveSort(givenArr);
+            }
+            let end = Date.now();
+            alert(end - start);
+
+        }
+
+        analyzer(iteration);
     </script>
 
 </body>
