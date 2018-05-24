@@ -28,7 +28,7 @@
         //        Add your algorithms here
         //        =============================================
         let givenArr = [1];
-        let name = "Sort analysis"; // enter graph title
+
         function recursiveSort(arr) {
             for (var index = 0; index < arr.length - 1; index++) {
                 if (arr[index] > arr[index + 1]) {
@@ -52,6 +52,14 @@
             return unsortedList;
         }
         //end
+
+        // default sort
+        function sort(arr) {
+            arr.sort(function(a, b) {
+                return a - b
+            });
+            return arr;
+        }
 
         function quicksortBasic(array) {
             if (array.length < 2) {
@@ -89,16 +97,10 @@
             return result.concat(a.length ? a : b);
         }
 
-        function sort(arr) {
-            arr.sort(function(a, b) {
-                return a - b
-            });
-            return arr;
-        }
         //        =============================================
 
         function getRandomInt(max) {
-            return Math.floor(Math.random() * Math.floor(max))+1;
+            return Math.floor(Math.random() * Math.floor(max)) + 1;
         }
 
         function analyzer(iteration, arr, func) {
