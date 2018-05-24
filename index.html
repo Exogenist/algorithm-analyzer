@@ -106,15 +106,15 @@
             return end - start;
         }
 
-        function createData(num, arr, i) {
+        function createData(num, arr, i, func) {
             let dataArr = [];
             for (i; i >= 1; i--) {
-                dataArr.push(analyzer(num / i, arr, recursiveSort))
+                dataArr.push(analyzer(num / i, arr, func))
             }
             return dataArr
         }
 
-        console.log(createData(100000000, givenArr, 20))
+        console.log(createData(1000000, givenArr, 20, recursiveSort))
         let context = document.getElementById("chart").getContext("2d");
         let chart = new Chart(context, {
             type: "line",
@@ -122,10 +122,14 @@
                 labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
                 datasets: [{
                     label: name,
-                    data: createData(100000000, givenArr, 20)
+                    data: createData(1000000, givenArr, 20, recursiveSort)
                 }],
             }
         });
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
     </script>
 
 </body>
