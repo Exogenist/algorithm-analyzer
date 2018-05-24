@@ -27,7 +27,7 @@
         //        =============================================
         //        Add your algorithms here
         //        =============================================
-        let givenArr = [1, 2, 6, 3, 7, 3, 45];
+        let givenArr = [1];
         let name = "Sort analysis"; // enter graph title
         function recursiveSort(arr) {
             for (var index = 0; index < arr.length - 1; index++) {
@@ -97,9 +97,14 @@
         }
         //        =============================================
 
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max))+1;
+        }
+
         function analyzer(iteration, arr, func) {
             let start = Date.now();
             for (let i = 0; i < iteration; i++) {
+                arr.push(getRandomInt(iteration))
                 func(arr);
             }
             let end = Date.now();
@@ -116,7 +121,7 @@
 
         function createLabels(num) {
             let arr = [];
-            for(var i = 1; i <= num; i++) {
+            for (var i = 1; i <= num; i++) {
                 arr.push(i);
             }
             return arr;
@@ -131,27 +136,23 @@
                     label: "recursive bubble sort",
                     fill: false,
                     backgroundColor: "red",
-					borderColor: "red",
-                    data: createData(1000000, givenArr, 20, recursiveSort)
+                    borderColor: "red",
+                    data: createData(1000, givenArr, 20, recursiveSort)
                 }, {
                     label: "insertion sort",
                     fill: false,
                     backgroundColor: "blue",
-					borderColor: "blue",
-                    data: createData(1000000, givenArr, 20, insertionSort)
+                    borderColor: "blue",
+                    data: createData(1000, givenArr, 20, insertionSort)
                 }, {
-                   label: "default sort",
+                    label: "default sort",
                     fill: false,
                     backgroundColor: "green",
-					borderColor: "green",
-                    data: createData(1000000, givenArr, 20, sort)
+                    borderColor: "green",
+                    data: createData(1000, givenArr, 20, sort)
                 }]
             }
         });
-
-        function getRandomInt(max) {
-            return Math.floor(Math.random() * Math.floor(max));
-        }
     </script>
 
 </body>
