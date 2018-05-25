@@ -139,19 +139,25 @@
                     fill: false,
                     backgroundColor: "red",
                     borderColor: "red",
-                    data: createData(100, givenArr, 20, recursiveSort)
+                    data: createData(300, givenArr, 20, recursiveSort)
                 }, {
                     label: "insertion sort",
                     fill: false,
                     backgroundColor: "blue",
                     borderColor: "blue",
-                    data: createData(100, givenArr, 20, insertionSort)
+                    data: createData(300, givenArr, 20, insertionSort)
                 }, {
                     label: "default sort",
                     fill: false,
                     backgroundColor: "green",
                     borderColor: "green",
-                    data: createData(100, givenArr, 20, sort)
+                    data: createData(300, givenArr, 20, sort)
+                }, {
+                    label: "quick sort",
+                    fill: false,
+                    backgroundColor: "purple",
+                    borderColor: "purple",
+                    data: createData(300, givenArr, 20, mergeSort)
                 }]
             }
         });
